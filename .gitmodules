@@ -1,0 +1,4 @@
+[submodule "modm"]
+	path = modm
+	url = https://github.com/modm-io/modm.git
+	branch = feature/bmp280
