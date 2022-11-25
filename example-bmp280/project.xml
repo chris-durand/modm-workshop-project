@@ -1,0 +1,14 @@
+<library>
+  <repositories>
+    <!-- path to modm repository -->
+    <repository>
+      <path>../modm/repo.lb</path>
+    </repository>
+  </repositories>
+  <extends>modm:nucleo-g431kb</extends>
+  <modules>
+    <module>modm:build:scons</module>
+    <module>modm:platform:i2c:1</module>
+    <module>modm:driver:bmp280</module>
+  </modules>
+</library>
