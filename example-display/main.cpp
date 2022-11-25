@@ -31,10 +31,10 @@ main()
 
 	MODM_LOG_INFO << "SSD1306 display test\n";
 
-	display.initializeBlocking();
+	RF_CALL_BLOCKING(display.initialize());
 	display.setFont(modm::font::FixedWidth5x8);
 	display << "Hello World!";
-	display.update();
+	RF_CALL_BLOCKING(display.writeDisplay());
 
 	modm::ShortPeriodicTimer timer(1s);
 	uint16_t counter(0);
@@ -45,7 +45,7 @@ main()
 		{
 			display.setCursor(0,20);
 			display << counter++;
-			display.update();
+			RF_CALL_BLOCKING(display.writeDisplay());
 		}
 	}
 
